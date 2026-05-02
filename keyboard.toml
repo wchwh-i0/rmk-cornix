@@ -208,24 +208,16 @@ operations = [
 ]
 
 # fork
-[behavior.fork]
-forks = [
-  {
-    trigger = "G",
-    negative_output = "Macro1",  # gg
-    positive_output = "Macro2",   # G (Shift+G)
-    match_any = "LShift|RShift",
-    kept_modifiers = ""
-  }
-]
+[[behavior.fork.forks]]
+trigger = "G"
+negative_output = "Macro5"  # gg
+positive_output = "Macro6"  # G
+match_any = "LShift|RShift"
+kept_modifiers = ""
 
-[behavior.fork]
-forks = [
-  {
-    trigger = "P",
-    negative_output = "Macro7",  # p
-    positive_output = "Macro8",  # P
-    match_any = "LShift|RShift",
-    kept_modifiers = ""
-  }
-]
+[[behavior.fork.forks]]
+trigger = "P"
+negative_output = "Macro7"  # p
+positive_output = "Macro8"  # P
+match_any = "LShift|RShift"
+kept_modifiers = ""
