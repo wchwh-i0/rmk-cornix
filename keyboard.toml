@@ -108,3 +108,124 @@ enable_flow_tap = false
 hold_on_other_press = true
 hold_timeout = "180ms"
 gap_timeout = "250ms"
+
+# vim macro
+## Cursor movement
+### gg
+[[behavior.macro.macros]]
+operations = [
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "Home" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
+### G
+[[behavior.macro.macros]]
+operations = [
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "End" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
+## Editing
+### u
+[[behavior.macro.macros]]
+operations = [
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "Z" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
+### Ctrl + r
+[[behavior.macro.macros]]
+operations = [
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "Y" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
+### S
+[[behavior.macro.macros]]
+operations = [
+  { operation = "tap", keycode = "Home" },
+  { operation = "down", keycode = "LShift" },
+  { operation = "tap", keycode = "End" },
+  { operation = "up", keycode = "LShift" },
+  { operation = "tap", keycode = "Delete" },
+]
+
+## Cut and paste
+### yy
+[[behavior.macro.macros]]
+operations = [
+  { operation = "tap", keycode = "Home" },
+  { operation = "down", keycode = "LShift" },
+  { operation = "tap", keycode = "End" },
+  { operation = "up", keycode = "LShift" },
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "C" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
+### p
+[[behavior.macro.macros]]
+operations = [
+  { operation = "tap", keycode = "End" },
+  { operation = "tap", keycode = "Enter" },
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "V" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
+### P
+[[behavior.macro.macros]]
+operations = [
+  { operation = "tap", keycode = "Home" },
+  { operation = "tap", keycode = "Enter" },
+  { operation = "tap", keycode = "Up" },
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "V" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
+### dd
+[[behavior.macro.macros]]
+operations = [
+  { operation = "tap", keycode = "Home" },
+  { operation = "down", keycode = "LShift" },
+  { operation = "tap", keycode = "Down" },
+  { operation = "up", keycode = "LShift" },
+  { operation = "tap", keycode = "Delete" },
+]
+
+### D
+[[behavior.macro.macros]]
+operations = [
+  { operation = "down", keycode = "LShift" },
+  { operation = "tap", keycode = "End" },
+  { operation = "up", keycode = "LShift" },
+  { operation = "tap", keycode = "Delete" },
+]
+
+# fork
+[behavior.fork]
+forks = [
+  {
+    trigger = "G",
+    negative_output = "Macro_GG",  # gg
+    positive_output = "Macro_G",   # G (Shift+G)
+    match_any = "LShift|RShift",
+    kept_modifiers = ""
+  }
+]
+
+[behavior.fork]
+forks = [
+  {
+    trigger = "P",
+    negative_output = "Macro0",  # p
+    positive_output = "Macro1",  # P
+    match_any = "LShift|RShift",
+    kept_modifiers = ""
+  }
+]
