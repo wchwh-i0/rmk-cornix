@@ -111,7 +111,7 @@ gap_timeout = "250ms"
 
 # vim macro
 ## Cursor movement
-### M1: gg
+### M0: gg
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LCtrl" },
@@ -119,7 +119,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### M2: G
+### M1: G
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LCtrl" },
@@ -128,14 +128,14 @@ operations = [
 ]
 
 ## Insert mode
-### M3: o
+### M2: o
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "End" },
   { operation = "tap", keycode = "Enter" },
 ]
 
-### M4: O
+### M3: O
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -144,7 +144,7 @@ operations = [
 ]
 
 ## Editing
-### M5: S
+### M4: S
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -155,7 +155,7 @@ operations = [
 ]
 
 ## Cut and paste
-### M6: yy
+### M5: yy
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -167,7 +167,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### M7: p
+### M6: p
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "End" },
@@ -177,7 +177,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### M8: P
+### M7: P
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -188,7 +188,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### M9: dd
+### M8: dd
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -198,7 +198,7 @@ operations = [
   { operation = "tap", keycode = "Delete" },
 ]
 
-### M10: D
+### M9: D
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LShift" },
@@ -210,14 +210,14 @@ operations = [
 # fork
 [[behavior.fork.forks]]
 trigger = "G"
-negative_output = "Macro5"  # gg
-positive_output = "Macro6"  # G
+negative_output = "Macro0"  # gg
+positive_output = "Macro1"  # G
 match_any = "LShift|RShift"
 kept_modifiers = ""
 
 [[behavior.fork.forks]]
 trigger = "P"
-negative_output = "Macro7"  # p
-positive_output = "Macro8"  # P
+negative_output = "Macro6"  # p
+positive_output = "Macro7"  # P
 match_any = "LShift|RShift"
 kept_modifiers = ""
