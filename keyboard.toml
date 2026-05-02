@@ -111,7 +111,7 @@ gap_timeout = "250ms"
 
 # vim macro
 ## Cursor movement
-### gg
+### M1: gg
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LCtrl" },
@@ -119,7 +119,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### G
+### M2: G
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LCtrl" },
@@ -127,24 +127,24 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
+## Insert mode
+### M3: o
+[[behavior.macro.macros]]
+operations = [
+  { operation = "tap", keycode = "End" },
+  { operation = "tap", keycode = "Enter" },
+]
+
+### M4: O
+[[behavior.macro.macros]]
+operations = [
+  { operation = "tap", keycode = "Home" },
+  { operation = "tap", keycode = "Enter" },
+  { operation = "tap", keycode = "Up" },
+]
+
 ## Editing
-### u
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "tap", keycode = "Z" },
-  { operation = "up", keycode = "LCtrl" },
-]
-
-### Ctrl + r
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "tap", keycode = "Y" },
-  { operation = "up", keycode = "LCtrl" },
-]
-
-### S
+### M5: S
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -155,7 +155,7 @@ operations = [
 ]
 
 ## Cut and paste
-### yy
+### M6: yy
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -167,7 +167,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### p
+### M7: p
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "End" },
@@ -177,7 +177,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### P
+### M8: P
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -188,7 +188,7 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### dd
+### M9: dd
 [[behavior.macro.macros]]
 operations = [
   { operation = "tap", keycode = "Home" },
@@ -198,7 +198,7 @@ operations = [
   { operation = "tap", keycode = "Delete" },
 ]
 
-### D
+### M10: D
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LShift" },
@@ -212,8 +212,8 @@ operations = [
 forks = [
   {
     trigger = "G",
-    negative_output = "Macro_GG",  # gg
-    positive_output = "Macro_G",   # G (Shift+G)
+    negative_output = "Macro1",  # gg
+    positive_output = "Macro2",   # G (Shift+G)
     match_any = "LShift|RShift",
     kept_modifiers = ""
   }
@@ -223,8 +223,8 @@ forks = [
 forks = [
   {
     trigger = "P",
-    negative_output = "Macro0",  # p
-    positive_output = "Macro1",  # P
+    negative_output = "Macro7",  # p
+    positive_output = "Macro8",  # P
     match_any = "LShift|RShift",
     kept_modifiers = ""
   }
