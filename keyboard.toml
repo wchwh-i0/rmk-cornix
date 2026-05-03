@@ -105,15 +105,15 @@ combos = [
   # Vim Layer 3 only
   { actions = ["LShift", "TD(3)"], output = "Macro1", layer = 3 },  # --> G
   { actions = ["LShift", "Macro2"], output = "Macro3", layer = 3 }, # --> O
-  { actions = ["LShift", "S"], output = "Macro4", layer = 3 }, # --> S
-  { actions = ["LCtrl", "R"], output = "Macro5", layer = 3 }, # --> Ctrl + r
-  { actions = ["LShift", "Macro7"], output = "Macro7", layer = 3 }, # --> P
+  { actions = ["LShift", "S"], output = "Macro4", layer = 3 },      # --> S
+  { actions = ["LCtrl", "R"], output = "Macro5", layer = 3 },       # --> Ctrl + r
+  { actions = ["LShift", "Macro7"], output = "Macro8", layer = 3 }, # --> P
   { actions = ["LShift", "TD(5)"], output = "Macro9", layer = 3 },  # --> D
   ## right shift
   { actions = ["RShift", "TD(3)"], output = "Macro1", layer = 3 },
   { actions = ["RShift", "Macro2"], output = "Macro3", layer = 3 },
   { actions = ["RShift", "S"], output = "Macro4", layer = 3 },
-  { actions = ["RShift", "Macro7"], output = "Macro7", layer = 3 },
+  { actions = ["RShift", "Macro7"], output = "Macro8", layer = 3 },
   { actions = ["RShift", "TD(5)"], output = "Macro9", layer = 3 },
 ]
 
