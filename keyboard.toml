@@ -65,7 +65,7 @@ unlock_keys = [[1, 3], [1, 4]]
 [storage]
 enabled = true
 clear_storage = false
-clear_layout = true
+clear_layout = false
 
 [dependency]
 defmt_log = false
