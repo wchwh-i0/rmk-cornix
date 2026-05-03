@@ -100,18 +100,21 @@ encoders = [["PgDn", "PgUp"], ["AudioVolUp", "AudioVolDown"]]
 timeout = "3s"
 
 [behavior.combo]
-timeout = "50ms"
+timeout = "200ms" # default 50ms
 combos = [
-  # Vim Layer (3) only
-  { actions = ["LShift", "G"], output = "Macro1", layer = 3 },
-  { actions = ["LShift", "O"], output = "Macro3", layer = 3 },
-  { actions = ["LShift", "P"], output = "Macro4", layer = 3 },
-  { actions = ["LShift", "D"], output = "Macro6", layer = 3 },
+  # Vim Layer 3 only
+  { actions = ["LShift", "TD(3)"], output = "Macro1", layer = 3 },  # --> G
+  { actions = ["LShift", "Macro2"], output = "Macro3", layer = 3 }, # --> O
+  { actions = ["LShift", "S"], output = "Macro4", layer = 3 }, # --> S
+  { actions = ["LCtrl", "R"], output = "Macro5", layer = 3 }, # --> Ctrl + r
+  { actions = ["LShift", "Macro7"], output = "Macro7", layer = 3 }, # --> P
+  { actions = ["LShift", "TD(5)"], output = "Macro9", layer = 3 },  # --> D
   ## right shift
-  { actions = ["RShift", "G"], output = "Macro1", layer = 3 },
-  { actions = ["RShift", "O"], output = "Macro3", layer = 3 },
-  { actions = ["RShift", "P"], output = "Macro4", layer = 3 },
-  { actions = ["RShift", "D"], output = "Macro6", layer = 3 },
+  { actions = ["RShift", "TD(3)"], output = "Macro1", layer = 3 },
+  { actions = ["RShift", "Macro2"], output = "Macro3", layer = 3 },
+  { actions = ["RShift", "S"], output = "Macro4", layer = 3 },
+  { actions = ["RShift", "Macro7"], output = "Macro7", layer = 3 },
+  { actions = ["RShift", "TD(5)"], output = "Macro9", layer = 3 },
 ]
 
 [behavior.morse]
@@ -173,14 +176,22 @@ operations = [
   { operation = "tap", keycode = "Delete" },
 ]
 
+### M5: Ctrl + r (windows only)
+[[behavior.macro.macros]]
+operations = [
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "down", keycode = "LShift" },
+  { operation = "tap", keycode = "Z" },
+  { operation = "up", keycode = "LShift" },
+  { operation = "up", keycode = "LCtrl" },
+]
+
 ## Cut and paste
-### M5: yy
+### M6: yy (windows only)
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
   { operation = "tap", keycode = "Left" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "down", keycode = "LAlt" },
   { operation = "down", keycode = "LShift" },
   { operation = "tap", keycode = "Right" },
   { operation = "up", keycode = "LShift" },
@@ -190,19 +201,19 @@ operations = [
   { operation = "up", keycode = "LCtrl" },
 ]
 
-### M6: p
+### M7: p
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
   { operation = "tap", keycode = "Right" },
   { operation = "up", keycode = "LAlt" },
   { operation = "tap", keycode = "Enter" },
-  { operation = "down", keycode = "LAlt" },
+  { operation = "down", keycode = "LCtrl" },
   { operation = "tap", keycode = "V" },
-  { operation = "up", keycode = "LAlt" },
+  { operation = "up", keycode = "LCtrl" },
 ]
 
-### M7: P
+### M8: P
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
@@ -210,27 +221,27 @@ operations = [
   { operation = "up", keycode = "LAlt" },
   { operation = "tap", keycode = "Enter" },
   { operation = "tap", keycode = "Up" },
-  { operation = "down", keycode = "LAlt" },
+  { operation = "down", keycode = "LCtrl" },
   { operation = "tap", keycode = "V" },
-  { operation = "up", keycode = "LAlt" },
+  { operation = "up", keycode = "LCtrl" },
 ]
 
-### M8: dd
+### M9: dd (windows only / Copy)
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
   { operation = "tap", keycode = "Left" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "down", keycode = "LAlt" },
   { operation = "down", keycode = "LShift" },
   { operation = "tap", keycode = "Right" },
   { operation = "up", keycode = "LShift" },
   { operation = "up", keycode = "LAlt" },
-  { operation = "tap", keycode = "Delete" },
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "X" },
+  { operation = "up", keycode = "LCtrl" },
   { operation = "tap", keycode = "Delete" },
 ]
 
-### M9: D
+### M10: D
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
@@ -239,4 +250,14 @@ operations = [
   { operation = "up", keycode = "LShift" },
   { operation = "up", keycode = "LAlt" },
   { operation = "tap", keycode = "Delete" },
+]
+
+[behavior.tap_dance]
+tap_dances = [
+  { tap = "Tab", hold = "Esc", hold_after_tap = "Tab" },              # TD0
+  { tap = "Z", hold = "LShift" },                                     # TD1
+  { tap = "Minus", double_tap = "Equal", hold_after_tap = "Minus" },  # TD2
+  { double_tap = "Macro0" },                                          # TD3: gg
+  { double_tap = "Macro6" },                                          # TD4: yy
+  { double_tap = "Macro9" },                                          # TD5: dd
 ]
