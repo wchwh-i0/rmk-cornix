@@ -104,9 +104,9 @@ timeout = "50ms"
 combos = [
   # Vim Layer (3) only
   { actions = ["LShift", "G"], output = "Macro1", layer = 3 },
-  { actions = ["LShift", "O"], output = "Macro8", layer = 3 },
-  { actions = ["LShift", "P"], output = "Macro7", layer = 3 },
-  { actions = ["LShift", "D"], output = "Macro9", layer = 3 },
+  { actions = ["LShift", "O"], output = "Macro3", layer = 3 },
+  { actions = ["LShift", "P"], output = "Macro4", layer = 3 },
+  { actions = ["LShift", "D"], output = "Macro6", layer = 3 },
   ## right shift
   { actions = ["RShift", "G"], output = "Macro1", layer = 3 },
   { actions = ["RShift", "O"], output = "Macro3", layer = 3 },
@@ -180,14 +180,14 @@ operations = [
   { operation = "down", keycode = "LAlt" },
   { operation = "tap", keycode = "Left" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "down", keycode = "LAlt" },
   { operation = "down", keycode = "LShift" },
-  { operation = "down", keycode = "LAlt" },
   { operation = "tap", keycode = "Right" },
-  { operation = "up", keycode = "LAlt" },
   { operation = "up", keycode = "LShift" },
-  { operation = "down", keycode = "LAlt" },
-  { operation = "tap", keycode = "C" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "down", keycode = "LCtrl" },
+  { operation = "tap", keycode = "C" },
+  { operation = "up", keycode = "LCtrl" },
 ]
 
 ### M6: p
@@ -221,19 +221,22 @@ operations = [
   { operation = "down", keycode = "LAlt" },
   { operation = "tap", keycode = "Left" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "down", keycode = "LAlt" },
   { operation = "down", keycode = "LShift" },
-  { operation = "tap", keycode = "Down" },
+  { operation = "tap", keycode = "Right" },
   { operation = "up", keycode = "LShift" },
+  { operation = "up", keycode = "LAlt" },
+  { operation = "tap", keycode = "Delete" },
   { operation = "tap", keycode = "Delete" },
 ]
 
 ### M9: D
 [[behavior.macro.macros]]
 operations = [
-  { operation = "down", keycode = "LShift" },
   { operation = "down", keycode = "LAlt" },
+  { operation = "down", keycode = "LShift" },
   { operation = "tap", keycode = "Right" },
-  { operation = "up", keycode = "LAlt" },
   { operation = "up", keycode = "LShift" },
+  { operation = "up", keycode = "LAlt" },
   { operation = "tap", keycode = "Delete" },
 ]
