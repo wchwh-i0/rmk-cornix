@@ -100,7 +100,8 @@ encoders = [["PgDn", "PgUp"], ["AudioVolUp", "AudioVolDown"]]
 timeout = "3s"
 
 [behavior.combo]
-timeout = "200ms" # default 50ms
+timeout = "50ms"
+#timeout = "200ms" # default 50ms
 combos = [
   # Vim Layer 3 only
   { actions = ["LShift", "TD(3)"], output = "Macro1", layer = 3 },  # --> G
