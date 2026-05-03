@@ -1,6 +1,6 @@
 [keyboard]
 name = "Cornix"
-product_name = "Cornix"
+product_name = "Cornix"Gffsdrwr
 vendor_id = 0x4c4b
 product_id = 0x4643
 manufacturer = "Jezail Funder"
@@ -114,17 +114,17 @@ gap_timeout = "250ms"
 ### M0: gg
 [[behavior.macro.macros]]
 operations = [
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "tap", keycode = "Home" },
-  { operation = "up", keycode = "LCtrl" },
+  { operation = "down", keycode = "LAlt" },
+  { operation = "tap", keycode = "Up" },
+  { operation = "up", keycode = "LAlt" },
 ]
 
 ### M1: G
 [[behavior.macro.macros]]
 operations = [
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "tap", keycode = "End" },
-  { operation = "up", keycode = "LCtrl" },
+  { operation = "down", keycode = "LAlt" },
+  { operation = "tap", keycode = "Down" },
+  { operation = "up", keycode = "LAlt" },
 ]
 
 ## Insert mode
