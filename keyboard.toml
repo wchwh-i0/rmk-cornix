@@ -122,6 +122,14 @@ enable_flow_tap = false
 hold_on_other_press = true
 hold_timeout = "180ms"
 gap_timeout = "250ms"
+morses = [
+  { tap = "Tab", hold = "Esc", hold_after_tap = "Tab" },              # TD0
+  { tap = "Z", hold = "LShift" },                                     # TD1
+  { tap = "Minus", double_tap = "Equal", hold_after_tap = "Minus" },  # TD2
+  { double_tap = "Macro0" },                                          # TD3: gg
+  { double_tap = "Macro6" },                                          # TD4: yy
+  { double_tap = "Macro9" },                                          # TD5: dd
+]
 
 # vim macro
 ## Cursor movement
@@ -250,14 +258,4 @@ operations = [
   { operation = "up", keycode = "LShift" },
   { operation = "up", keycode = "LAlt" },
   { operation = "tap", keycode = "Delete" },
-]
-
-[behavior.tap_dance]
-tap_dances = [
-  { tap = "Tab", hold = "Esc", hold_after_tap = "Tab" },              # TD0
-  { tap = "Z", hold = "LShift" },                                     # TD1
-  { tap = "Minus", double_tap = "Equal", hold_after_tap = "Minus" },  # TD2
-  { double_tap = "Macro0" },                                          # TD3: gg
-  { double_tap = "Macro6" },                                          # TD4: yy
-  { double_tap = "Macro9" },                                          # TD5: dd
 ]
