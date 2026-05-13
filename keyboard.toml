@@ -138,7 +138,9 @@ morses = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Up" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
 ]
 
@@ -146,7 +148,9 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Down" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
 ]
 
@@ -155,8 +159,11 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Right" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Enter" },
 ]
 
@@ -164,9 +171,13 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Left" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Enter" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Up" },
 ]
 
@@ -175,13 +186,21 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Left" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Right" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Delete" },
 ]
 
@@ -189,9 +208,13 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LCtrl" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Z" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LCtrl" },
 ]
 
@@ -200,13 +223,21 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Left" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Right" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LCtrl" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "C" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LCtrl" },
 ]
 
@@ -214,11 +245,17 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Right" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Enter" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LCtrl" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "V" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LCtrl" },
 ]
 
@@ -226,12 +263,19 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Left" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Enter" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Up" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LCtrl" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "V" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LCtrl" },
 ]
 
@@ -239,14 +283,23 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Left" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Right" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LCtrl" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "X" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LCtrl" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Delete" },
 ]
 
@@ -254,9 +307,14 @@ operations = [
 [[behavior.macro.macros]]
 operations = [
   { operation = "down", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "down", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Right" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LShift" },
+  { operation = "delay", duration = "5ms" },
   { operation = "up", keycode = "LAlt" },
+  { operation = "delay", duration = "5ms" },
   { operation = "tap", keycode = "Delete" },
 ]
