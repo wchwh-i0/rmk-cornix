@@ -86,15 +86,57 @@ matrix_map = """
 (3,0) (3,1) (3,2) (3,3) (3,4) (3,5)              (7,5) (7,4) (7,3) (7,2) (7,1) (7,0)
 """
 
+# ============================================================
+# Layer 0: base layer
+# ============================================================
 [[layer]]
 name = "base_layer"
 keys = """
-ESC     Q     W     E     R      T                Y     U      I      O     P          BSPC
-TAB     A     S     D     F      G                H     J      K      L     SEMICOLON  QUOT
-LSHIFT  Z     X     C     V      B    NO    NO    N     M      COMMA  DOT   SLASH      RSHIFT
-LCTRL   LGUI  LALT  NO    SPACE  NO               NO    ENTER  NO     RALT  MENU       RCTRL
+TD(0)    Q                W                 E                R                T                                      Y                U                I                O                P                BSPC
+CAPS     A                S                 D                F                G                                      H                J                K                L                Semicolon        ENTER
+LSHIFT   TD(1)            X                 C                V                B                AudioMute  AudioMute  N                M                Comma            Dot              Slash            Quote
+LCTRL    LGUI             LALT              TO(1)            SPACE            TO(0)                                  TO(3)            MO(2)            TD(2)            LeftBracket      RightBracket     Backslash
 """
-encoders = [["PgDn", "PgUp"], ["AudioVolUp", "AudioVolDown"]]
+encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
+ 
+# ============================================================
+# Layer 1: symbol / number layer
+# ============================================================
+[[layer]]
+name = "symbol_layer"
+keys = """
+_______  WM(Kc1, LSHIFT)  WM(Kc2, LSHIFT)   WM(Kc3, LSHIFT)  WM(Kc4, LSHIFT)  WM(Kc5, LSHIFT)                        WM(Kc6, LSHIFT)  WM(Kc7, LSHIFT)  WM(Kc8, LSHIFT)  WM(Kc9, LSHIFT)  WM(Kc0, LSHIFT)  _______
+_______  Kp1              Kp2               Kp3              Kp4              Kp5                                    Kp6              Kp7              Kp8              Kp9              Kp0              _______
+_______  TD(1)            _______           _______          _______          _______          _______    _______    _______          _______          _______          _______          _______          _______
+_______  _______          _______           TO(1)            SPACE            TO(0)                                  TO(3)            MO(2)            TD(2)            _______          _______          _______
+"""
+encoders = [["AudioVolDown", "AudioVolUp"], ["AudioVolDown", "AudioVolUp"]]
+ 
+# ============================================================
+# Layer 2: BT / function layer
+# ============================================================
+[[layer]]
+name = "bt_fn_layer"
+keys = """
+Grave    NO               F2                NO               F4               NO                                     NO               F7               PrintScreen      NO               F12              _______
+User0    NO               NO                NO               NO               NO                                     NO               NO               NO               NO               NO               NO
+User1    TD(1)            NO                NO               NO               NO               NO         NO         NO               NO               NO               NO               NO               NO
+User2    _______          _______           NO               NO               NO                                     NO               NO               NO               NO               NO               NO
+"""
+encoders = [["NO", "NO"], ["NO", "NO"]]
+ 
+# ============================================================
+# Layer 3: vim layer
+# ============================================================
+[[layer]]
+name = "vim_layer"
+keys = """
+_______  _______          WM(Right, LCtrl)  _______          R                _______                                TD(4)            U                NO               F15              F20              _______
+CAPS     _______          S                 TD(5)            _______          TD(3)                                  Left             Down             Up               Right            _______          _______
+LSHIFT   Z                DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          _______          _______
+LCTRL    LGUI             LALT              _______          _______          _______                                _______          _______          _______          _______          _______          _______
+"""
+encoders = [["NO", "NO"], ["NO", "NO"]]
 
 [behavior.one_shot]
 timeout = "3s"
