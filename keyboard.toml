@@ -131,7 +131,7 @@ encoders = [["NO", "NO"], ["NO", "NO"]]
 [[layer]]
 name = "vim_layer"
 keys = """
-_______  _______          WM(Right, LCtrl)  _______          R                _______                                TD(4)            U                NO               F15              F20              _______
+_______  _______          WM(Right, LCtrl)  _______          R                _______                                TD(4)            F24              NO               F15              F20              _______
 CAPS     _______          S                 TD(5)            _______          TD(3)                                  Left             Down             Up               Right            _______          _______
 LSHIFT   Z                DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          _______          _______
 LCTRL    LGUI             LALT              _______          _______          _______                                _______          _______          _______          _______          _______          _______
@@ -165,10 +165,10 @@ hold_on_other_press = true
 hold_timeout = "180ms"
 gap_timeout = "250ms"
 morses = [
-  { tap = "Tab", hold = "Esc", hold_after_tap = "Tab" },              # TD0
-  { tap = "Z", hold = "LShift" },                                     # TD1
-  { tap = "Minus", double_tap = "Equal", hold_after_tap = "Minus" },  # TD2
-  { double_tap = "F13" },                                             # TD3: gg
-  { double_tap = "F19" },                                             # TD4: yy
-  { double_tap = "F22" },                                             # TD5: dd
+  { tap = "Tab", hold = "Esc", hold_after_tap = "Tab" },    # TD0
+  { tap = "Z", hold = "LShift" },                           # TD1
+  { tap = "Minus", hold = "Minus", double_tap = "Equal" },  # TD2
+  { double_tap = "F13" },                                   # TD3: gg
+  { double_tap = "F19" },                                   # TD4: yy
+  { double_tap = "F22" },                                   # TD5: dd
 ]
