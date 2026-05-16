@@ -57,7 +57,6 @@ morse_max_num = 32
 max_patterns_per_key = 8
 combo_max_num = 32
 fork_max_num = 16
-macro_space_size = 512
 
 [host]
 vial_enabled = true
@@ -101,22 +100,21 @@ encoders = [["PgDn", "PgUp"], ["AudioVolUp", "AudioVolDown"]]
 timeout = "3s"
 
 [behavior.combo]
-timeout = "50ms"
-#timeout = "200ms" # default 50ms
+timeout = "200ms" # default 50ms 
 combos = [
   # Vim Layer 3 only
-  { actions = ["LShift", "TD(3)"], output = "Macro1", layer = 3 },  # --> G
-  { actions = ["LShift", "Macro2"], output = "Macro3", layer = 3 }, # --> O
-  { actions = ["LShift", "S"], output = "Macro4", layer = 3 },      # --> S
-  { actions = ["LCtrl", "R"], output = "Macro5", layer = 3 },       # --> Ctrl + r
-  { actions = ["LShift", "Macro7"], output = "Macro8", layer = 3 }, # --> P
-  { actions = ["LShift", "TD(5)"], output = "Macro9", layer = 3 },  # --> D
+  { actions = ["LShift", "TD(3)"], output = "F14", layer = 3 },  # G
+  { actions = ["LShift", "F15"], output = "F16", layer = 3 },    # O
+  { actions = ["LShift", "S"], output = "F17", layer = 3 },      # S
+  { actions = ["LCtrl", "R"], output = "F18", layer = 3 },       # Ctrl+r
+  { actions = ["LShift", "F20"], output = "F21", layer = 3 },    # P
+  { actions = ["LShift", "TD(5)"], output = "F23", layer = 3 },  # D
   ## right shift
-  { actions = ["RShift", "TD(3)"], output = "Macro1", layer = 3 },
-  { actions = ["RShift", "Macro2"], output = "Macro3", layer = 3 },
-  { actions = ["RShift", "S"], output = "Macro4", layer = 3 },
-  { actions = ["RShift", "Macro7"], output = "Macro8", layer = 3 },
-  { actions = ["RShift", "TD(5)"], output = "Macro9", layer = 3 },
+  { actions = ["RShift", "TD(3)"], output = "F14", layer = 3 },
+  { actions = ["RShift", "F15"], output = "F16", layer = 3 },
+  { actions = ["RShift", "S"], output = "F17", layer = 3 },
+  { actions = ["RShift", "F20"], output = "F21", layer = 3 },
+  { actions = ["RShift", "TD(5)"], output = "F23", layer = 3 },
 ]
 
 [behavior.morse]
@@ -128,194 +126,11 @@ morses = [
   { tap = "Tab", hold = "Esc", hold_after_tap = "Tab" },              # TD0
   { tap = "Z", hold = "LShift" },                                     # TD1
   { tap = "Minus", double_tap = "Equal", hold_after_tap = "Minus" },  # TD2
-  { double_tap = "Macro0" },                                          # TD3: gg
-  { double_tap = "Macro6" },                                          # TD4: yy
-  { double_tap = "Macro9" },                                          # TD5: dd
+  { double_tap = "F13" },                                             # TD3: gg
+  { double_tap = "F19" },                                             # TD4: yy
+  { double_tap = "F22" },                                             # TD5: dd
 ]
 
 # vim macro
 ## Cursor movement
 ### M0: gg
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Up" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-]
-
-### M1: G
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Down" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-]
-
-## Insert mode
-### M2: o
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Right" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Enter" },
-]
-
-### M3: O
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Left" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Enter" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Up" },
-]
-
-## Editing
-### M4: S
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Left" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Right" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Delete" },
-]
-
-### M5: Ctrl + r (windows only)
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Z" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LCtrl" },
-]
-
-## Cut and paste
-### M6: yy (windows only)
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Left" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Right" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "C" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LCtrl" },
-]
-
-### M7: p
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Right" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Enter" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "V" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LCtrl" },
-]
-
-### M8: P
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Left" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Enter" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Up" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "V" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LCtrl" },
-]
-
-### M9: dd (windows only / Copy)
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Left" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Right" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LCtrl" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "X" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LCtrl" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Delete" },
-]
-
-### M10: D
-[[behavior.macro.macros]]
-operations = [
-  { operation = "down", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "down", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Right" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LShift" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "up", keycode = "LAlt" },
-  { operation = "delay", duration = "5ms" },
-  { operation = "tap", keycode = "Delete" },
-]
