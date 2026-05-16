@@ -64,8 +64,8 @@ unlock_keys = [[1, 3], [1, 4]]
 
 [storage]
 enabled = true
-clear_storage = true
-clear_layout = true
+clear_storage = false
+clear_layout = false
 
 [dependency]
 defmt_log = false
@@ -130,7 +130,3 @@ morses = [
   { double_tap = "F19" },                                             # TD4: yy
   { double_tap = "F22" },                                             # TD5: dd
 ]
-
-# vim macro
-## Cursor movement
-### M0: gg
