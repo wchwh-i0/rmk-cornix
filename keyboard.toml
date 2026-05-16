@@ -57,7 +57,7 @@ morse_max_num = 32
 max_patterns_per_key = 8
 combo_max_num = 32
 fork_max_num = 16
-macro_space_size = 1024
+macro_space_size = 512
 
 [host]
 vial_enabled = true
