@@ -106,7 +106,7 @@ encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
 name = "symbol_layer"
 keys = """
 _______  WM(Kc1, LSHIFT)  WM(Kc2, LSHIFT)   WM(Kc3, LSHIFT)  WM(Kc4, LSHIFT)  WM(Kc5, LSHIFT)                        WM(Kc6, LSHIFT)  WM(Kc7, LSHIFT)  WM(Kc8, LSHIFT)  WM(Kc9, LSHIFT)  WM(Kc0, LSHIFT)  _______
-_______  Kp1              Kp2               Kp3              Kp4              Kp5                                    Kp6              Kp7              Kp8              Kp9              Kp0              _______
+_______  Kc1              Kc2               Kc3              Kc4              Kc5                                    Kc6              Kc7              Kc8              Kc9              Kc0              _______
 _______  TD(1)            _______           _______          _______          _______          _______    _______    _______          _______          _______          _______          _______          _______
 _______  _______          _______           TO(1)            SPACE            TO(0)                                  TO(3)            MO(2)            TD(2)            _______          _______          _______
 """
@@ -134,7 +134,7 @@ keys = """
 _______  _______          WM(Right, LCtrl)  _______          R                _______                                TD(4)            F24              NO               F15              F20              _______
 CAPS     _______          S                 TD(5)            _______          TD(3)                                  Left             Down             Up               Right            _______          _______
 LSHIFT   Z                DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          WM(F, LCtrl)     _______
-LCTRL    LGUI             LALT              _______          _______          _______                                _______          _______          _______          _______          _______          _______
+LCTRL    LGUI             LALT              _______          _______          TO(0)                                  _______          _______          _______          _______          _______          _______
 """
 encoders = [["NO", "NO"], ["NO", "NO"]]
 
@@ -165,7 +165,7 @@ hold_on_other_press = true
 hold_timeout = "180ms"
 gap_timeout = "250ms"
 morses = [
-  { tap = "Tab", hold = "Esc", hold_after_tap = "Tab" },    # TD0
+  { tap = "Tab", hold = "Esc" },                            # TD0
   { tap = "Z", hold = "LShift" },                           # TD1
   { tap = "Minus", hold = "Minus", double_tap = "Equal" },  # TD2
   { double_tap = "F13" },                                   # TD3: gg
