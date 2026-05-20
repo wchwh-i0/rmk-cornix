@@ -95,7 +95,7 @@ keys = """
 TD(0)    Q                W                 E                R                T                                      Y                U                I                O                P                BSPC
 CAPS     A                S                 D                F                G                                      H                J                K                L                Semicolon        ENTER
 LSHIFT   TD(1)            X                 C                V                B                AudioMute  AudioMute  N                M                Comma            Dot              Slash            Quote
-LCTRL    LGUI             LALT              TO(1)            SPACE            TO(0)                                  TO(3)            MO(2)            TD(2)            LeftBracket      RightBracket     Backslash
+LCTRL    LGUI             LALT              TO(1)            SPACE            ESC                                    TO(3)            MO(2)            TD(2)            LeftBracket      RightBracket     Backslash
 """
 encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
  
@@ -133,7 +133,7 @@ name = "vim_layer"
 keys = """
 _______  _______          WM(Right, LCtrl)  _______          R                _______                                TD(4)            F24              NO               F15              F20              _______
 CAPS     _______          S                 TD(5)            _______          TD(3)                                  Left             Down             Up               Right            _______          _______
-LSHIFT   Z                DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          _______          _______
+LSHIFT   Z                DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          WM(F, LCtrl)     _______
 LCTRL    LGUI             LALT              _______          _______          _______                                _______          _______          _______          _______          _______          _______
 """
 encoders = [["NO", "NO"], ["NO", "NO"]]
