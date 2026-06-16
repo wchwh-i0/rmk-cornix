@@ -133,7 +133,7 @@ name = "vim_layer"
 keys = """
 _______  _______          WM(Right, LCtrl)  _______          R                _______                                TD(4)            F24              NO               F15              F20              _______
 CAPS     _______          S                 TD(5)            _______          TD(3)                                  Left             Down             Up               Right            _______          _______
-LSHIFT   Z                DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          WM(F, LCtrl)     _______
+LSHIFT   TD(1)            DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          WM(F, LCtrl)     _______
 LCTRL    LGUI             LALT              _______          _______          TO(0)                                  _______          _______          _______          _______          _______          _______
 """
 encoders = [["NO", "NO"], ["NO", "NO"]]
