@@ -167,7 +167,7 @@ gap_timeout = "250ms"
 morses = [
   { tap = "Tab", hold = "Esc" },                            # TD0
   { tap = "Z", hold = "LShift" },                           # TD1
-  { tap = "TO(3)", hold = "MO(2)",                          # TD2
+  { tap = "TO(3)", hold = "MO(2)" },                        # TD2
   { double_tap = "F13" },                                   # TD3: gg
   { double_tap = "F19" },                                   # TD4: yy
   { double_tap = "F22" },                                   # TD5: dd
