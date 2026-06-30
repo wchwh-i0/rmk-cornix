@@ -171,5 +171,5 @@ morses = [
   { double_tap = "F13" },                                   # TD3: gg
   { double_tap = "F19" },                                   # TD4: yy
   { double_tap = "F22" },                                   # TD5: dd
-  { tap = "Lang2", double_tap = "Esc" },                    # TD6
+  { tap = "Language2", double_tap = "Esc" },                    # TD6
 ]
