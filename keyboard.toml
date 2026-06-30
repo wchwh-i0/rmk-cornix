@@ -95,7 +95,7 @@ keys = """
 TD(0)    Q                W                 E                R                T                                      Y                U                I                O                P                BSPC
 CAPS     A                S                 D                F                G                                      H                J                K                L                Semicolon        ENTER
 LSHIFT   TD(1)            X                 C                V                B                AudioMute  AudioMute  N                M                Comma            Dot              Slash            Quote
-LCTRL    LGUI             LALT              MO(1)            SPACE            TD(6)                                  TO(3)            MO(2)            TD(2)            LeftBracket      RightBracket     Backslash
+LCTRL    LGUI             LALT              MO(1)            SPACE            TD(6)                                  TD(2)            Minus            Equal            LeftBracket      RightBracket     Backslash
 """
 encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
  
@@ -107,8 +107,8 @@ name = "symbol_layer"
 keys = """
 _______  WM(Kc1, LSHIFT)  WM(Kc2, LSHIFT)   WM(Kc3, LSHIFT)  WM(Kc4, LSHIFT)  WM(Kc5, LSHIFT)                        WM(Kc6, LSHIFT)  WM(Kc7, LSHIFT)  WM(Kc8, LSHIFT)  WM(Kc9, LSHIFT)  WM(Kc0, LSHIFT)  _______
 _______  Kc1              Kc2               Kc3              Kc4              Kc5                                    Kc6              Kc7              Kc8              Kc9              Kc0              _______
-_______  TD(1)            NO                NO               NO               NO               _______    _______    NO               NO               NO               NO               _______          NO     
-_______  _______          _______           TO(1)            SPACE            TO(0)                                  TO(3)            MO(2)            TD(2)            NO               NO               NO
+_______  TD(1)            NO                NO               NO               NO               _______    _______    NO               NO               _______          _______          _______          _______
+_______  _______          _______           NO               SPACE            TO(0)                                  TD(2)            _______          _______          _______          _______          _______
 """
 encoders = [["AudioVolDown", "AudioVolUp"], ["AudioVolDown", "AudioVolUp"]]
  
@@ -118,7 +118,7 @@ encoders = [["AudioVolDown", "AudioVolUp"], ["AudioVolDown", "AudioVolUp"]]
 [[layer]]
 name = "bt_fn_layer"
 keys = """
-Grave    NO               F2                F3               F4               F5                                     NO               F7               PrintScreen      NO               F12              _______
+Grave    NO               F2                F3               F4               F5                                     NO               F7               PrintScreen      F9               F12              _______
 User0    NO               NO                NO               NO               NO                                     NO               NO               NO               NO               NO               NO
 User1    TD(1)            NO                NO               NO               NO               NO         NO         NO               NO               NO               NO               NO               NO
 User2    _______          _______           NO               NO               NO                                     NO               NO               NO               NO               NO               NO
@@ -132,11 +132,11 @@ encoders = [["NO", "NO"], ["NO", "NO"]]
 name = "vim_layer"
 keys = """
 _______  NO               WM(Right, LCtrl)  NO               R                _______                                TD(4)            F24              NO               F15              F20              _______
-CAPS     NO               S                 TD(5)            NO               TD(3)                                  Left             Down             Up               Right            NO               _______
+CAPS     NO               S                 TD(5)            NO               TD(3)                                  Left             Down             Up               Right            _______          _______
 LSHIFT   TD(1)            DEL               NO               NO               WM(Left, LCtrl)  _______    _______    NO               NO               NO               NO               WM(F, LCtrl)     _______
 LCTRL    LGUI             LALT              MO(1)            _______          TO(0)                                  _______          _______          _______          _______          _______          _______
 """
-encoders = [["NO", "NO"], ["AudioVolDown", "AudioVolUp"]]
+encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
 
 [behavior.one_shot]
 timeout = "3s"
@@ -167,9 +167,9 @@ gap_timeout = "250ms"
 morses = [
   { tap = "Tab", hold = "Esc" },                            # TD0
   { tap = "Z", hold = "LShift" },                           # TD1
-  { tap = "Minus", hold = "Minus", double_tap = "Equal" },  # TD2
+  { tap = "TO(3)", hold = "MO(2)",                          # TD2
   { double_tap = "F13" },                                   # TD3: gg
   { double_tap = "F19" },                                   # TD4: yy
   { double_tap = "F22" },                                   # TD5: dd
-  { tap = "TO(0)", double_tap = "Esc" },                    # TD6
+  { tap = "Lang2", double_tap = "Esc" },                    # TD6
 ]
