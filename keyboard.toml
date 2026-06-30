@@ -95,7 +95,7 @@ keys = """
 TD(0)    Q                W                 E                R                T                                      Y                U                I                O                P                BSPC
 CAPS     A                S                 D                F                G                                      H                J                K                L                Semicolon        ENTER
 LSHIFT   TD(1)            X                 C                V                B                AudioMute  AudioMute  N                M                Comma            Dot              Slash            Quote
-LCTRL    LGUI             LALT              TO(1)            SPACE            TD(6)                                  TO(3)            MO(2)            TD(2)            LeftBracket      RightBracket     Backslash
+LCTRL    LGUI             LALT              MO(1)            SPACE            TD(6)                                  TO(3)            MO(2)            TD(2)            LeftBracket      RightBracket     Backslash
 """
 encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
  
@@ -107,8 +107,8 @@ name = "symbol_layer"
 keys = """
 _______  WM(Kc1, LSHIFT)  WM(Kc2, LSHIFT)   WM(Kc3, LSHIFT)  WM(Kc4, LSHIFT)  WM(Kc5, LSHIFT)                        WM(Kc6, LSHIFT)  WM(Kc7, LSHIFT)  WM(Kc8, LSHIFT)  WM(Kc9, LSHIFT)  WM(Kc0, LSHIFT)  _______
 _______  Kc1              Kc2               Kc3              Kc4              Kc5                                    Kc6              Kc7              Kc8              Kc9              Kc0              _______
-_______  TD(1)            _______           _______          _______          _______          _______    _______    _______          _______          _______          _______          _______          _______
-_______  _______          _______           TO(1)            SPACE            TO(0)                                  TO(3)            MO(2)            TD(2)            _______          _______          _______
+_______  TD(1)            NO                NO               NO               NO               _______    _______    NO               NO               NO               NO               _______          NO     
+_______  _______          _______           TO(1)            SPACE            TO(0)                                  TO(3)            MO(2)            TD(2)            NO               NO               NO
 """
 encoders = [["AudioVolDown", "AudioVolUp"], ["AudioVolDown", "AudioVolUp"]]
  
@@ -131,12 +131,12 @@ encoders = [["NO", "NO"], ["NO", "NO"]]
 [[layer]]
 name = "vim_layer"
 keys = """
-_______  _______          WM(Right, LCtrl)  _______          R                _______                                TD(4)            F24              NO               F15              F20              _______
-CAPS     _______          S                 TD(5)            _______          TD(3)                                  Left             Down             Up               Right            _______          _______
-LSHIFT   TD(1)            DEL               _______          _______          WM(Left, LCtrl)  _______    _______    _______          _______          _______          _______          WM(F, LCtrl)     _______
-LCTRL    LGUI             LALT              _______          _______          TO(0)                                  _______          _______          _______          _______          _______          _______
+_______  NO               WM(Right, LCtrl)  NO               R                _______                                TD(4)            F24              NO               F15              F20              _______
+CAPS     NO               S                 TD(5)            NO               TD(3)                                  Left             Down             Up               Right            NO               _______
+LSHIFT   TD(1)            DEL               NO               NO               WM(Left, LCtrl)  _______    _______    NO               NO               NO               NO               WM(F, LCtrl)     _______
+LCTRL    LGUI             LALT              MO(1)            _______          TO(0)                                  _______          _______          _______          _______          _______          _______
 """
-encoders = [["NO", "NO"], ["NO", "NO"]]
+encoders = [["NO", "NO"], ["AudioVolDown", "AudioVolUp"]]
 
 [behavior.one_shot]
 timeout = "3s"
