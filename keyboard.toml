@@ -95,12 +95,25 @@ keys = """
 TD(0)    Q                W                 E                R                T                                      Y                U                I                O                P                BSPC
 CAPS     A                S                 D                F                G                                      H                J                K                L                Semicolon        ENTER
 LSHIFT   TD(1)            X                 C                V                B                AudioMute  AudioMute  N                M                Comma            Dot              Slash            Quote
-LCTRL    LGUI             LALT              MO(1)            SPACE            TD(6)                                  TD(2)            Minus            Equal            LeftBracket      RightBracket     Backslash
+LCTRL    LGUI             LALT              MO(2)            SPACE            TD(6)                                  TD(2)            Minus            Equal            LeftBracket      RightBracket     Backslash
 """
 encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
- 
+
 # ============================================================
-# Layer 1: symbol / number layer
+# Layer 1: vim layer
+# ============================================================
+[[layer]]
+name = "vim_layer"
+keys = """
+_______  NO               WM(Right, LCtrl)  NO               R                _______                                TD(4)            F24              NO               F15              F20              _______
+CAPS     NO               S                 TD(5)            NO               TD(3)                                  Left             Down             Up               Right            _______          _______
+LSHIFT   TD(1)            DEL               NO               NO               WM(Left, LCtrl)  _______    _______    NO               NO               NO               NO               WM(F, LCtrl)     _______
+LCTRL    LGUI             LALT              MO(2)            _______          TO(0)                                  _______          _______          _______          _______          _______          _______
+"""
+encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
+
+# ============================================================
+# Layer 2: symbol / number layer
 # ============================================================
 [[layer]]
 name = "symbol_layer"
@@ -111,9 +124,9 @@ _______  TD(1)            NO                NO               NO               NO
 _______  _______          _______           NO               SPACE            TO(0)                                  TD(2)            _______          _______          _______          _______          _______
 """
 encoders = [["AudioVolDown", "AudioVolUp"], ["AudioVolDown", "AudioVolUp"]]
- 
+
 # ============================================================
-# Layer 2: BT / function layer
+# Layer 3: BT / function layer
 # ============================================================
 [[layer]]
 name = "bt_fn_layer"
@@ -124,39 +137,26 @@ User1    TD(1)            NO                NO               NO               NO
 User2    _______          _______           NO               NO               NO                                     NO               NO               NO               NO               NO               NO
 """
 encoders = [["NO", "NO"], ["NO", "NO"]]
- 
-# ============================================================
-# Layer 3: vim layer
-# ============================================================
-[[layer]]
-name = "vim_layer"
-keys = """
-_______  NO               WM(Right, LCtrl)  NO               R                _______                                TD(4)            F24              NO               F15              F20              _______
-CAPS     NO               S                 TD(5)            NO               TD(3)                                  Left             Down             Up               Right            _______          _______
-LSHIFT   TD(1)            DEL               NO               NO               WM(Left, LCtrl)  _______    _______    NO               NO               NO               NO               WM(F, LCtrl)     _______
-LCTRL    LGUI             LALT              MO(1)            _______          TO(0)                                  _______          _______          _______          _______          _______          _______
-"""
-encoders = [["PgUp", "PgDn"], ["AudioVolDown", "AudioVolUp"]]
 
 [behavior.one_shot]
 timeout = "3s"
 
 [behavior.combo]
-timeout = "200ms" # default 50ms 
+timeout = "200ms" # default 50ms
 combos = [
-  # Vim Layer 3 only
-  { actions = ["LShift", "TD(3)"], output = "F14", layer = 3 },  # G
-  { actions = ["LShift", "F15"], output = "F16", layer = 3 },    # O
-  { actions = ["LShift", "S"], output = "F17", layer = 3 },      # S
-  { actions = ["LCtrl", "R"], output = "F18", layer = 3 },       # Ctrl+r
-  { actions = ["LShift", "F20"], output = "F21", layer = 3 },    # P
-  { actions = ["LShift", "TD(5)"], output = "F23", layer = 3 },  # D
+  # Vim Layer 1 only
+  { actions = ["LShift", "TD(3)"], output = "F14", layer = 1 },  # G
+  { actions = ["LShift", "F15"], output = "F16", layer = 1 },    # O
+  { actions = ["LShift", "S"], output = "F17", layer = 1 },      # S
+  { actions = ["LCtrl", "R"], output = "F18", layer = 1 },       # Ctrl+r
+  { actions = ["LShift", "F20"], output = "F21", layer = 1 },    # P
+  { actions = ["LShift", "TD(5)"], output = "F23", layer = 1 },  # D
   ## right shift
-  { actions = ["RShift", "TD(3)"], output = "F14", layer = 3 },
-  { actions = ["RShift", "F15"], output = "F16", layer = 3 },
-  { actions = ["RShift", "S"], output = "F17", layer = 3 },
-  { actions = ["RShift", "F20"], output = "F21", layer = 3 },
-  { actions = ["RShift", "TD(5)"], output = "F23", layer = 3 },
+  { actions = ["RShift", "TD(3)"], output = "F14", layer = 1 },
+  { actions = ["RShift", "F15"], output = "F16", layer = 1 },
+  { actions = ["RShift", "S"], output = "F17", layer = 1 },
+  { actions = ["RShift", "F20"], output = "F21", layer = 1 },
+  { actions = ["RShift", "TD(5)"], output = "F23", layer = 1 },
 ]
 
 [behavior.morse]
@@ -167,9 +167,9 @@ gap_timeout = "250ms"
 morses = [
   { tap = "Tab", hold = "Esc" },                            # TD0
   { tap = "Z", hold = "LShift" },                           # TD1
-  { tap = "TO(3)", hold = "MO(2)" },                        # TD2
+  { tap = "TO(1)", hold = "MO(3)" },                        # TD2
   { double_tap = "F13" },                                   # TD3: gg
   { double_tap = "F19" },                                   # TD4: yy
   { double_tap = "F22" },                                   # TD5: dd
-  { tap = "Language2", double_tap = "Esc" },                    # TD6
+  { tap = "Language2", double_tap = "Esc" },                # TD6
 ]
